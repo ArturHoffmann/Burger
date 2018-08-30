@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<!--pierwszą liniją informujemy gdzie ma wrzucić i co ma podmienić-->
+
+{% block content %}
+<!--co chcemy wrzucić i gdzie-->
+<h2>Lista uczniów:</h2>
+
+Klasa {{class_name}}
+<!--odwołujemy się do nazwy klasy-->
+
+<ul>
+    {% for student in students%}
+
+    <li>
+
+        Student {{student.name}}
+        <!--odwołujemy się do listy studentów-->
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

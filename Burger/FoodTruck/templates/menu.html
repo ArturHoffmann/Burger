@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>MENU</h1>
+
+<ul>
+
+{% for burger in burgers %}
+
+    <form action="toppings" method="post">
+    {% csrf_token %}
+
+    <input type="submit" name="burger_name" value="{{burger.name}}" >
+
+
+{% endfor %}
+
+{% endblock %}
+
+</ul>
+

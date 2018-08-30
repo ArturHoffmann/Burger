@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h2>KASA</h2>
+
+    <table>
+
+        <ul>
+            {% for e in order.get_items %}
+                <h3>
+                    <li>{{ e.burger.name }} {{ e.burger.base_price }}</li>
+
+                </h3>
+                {% for topping in e.toppings %}
+                    <li>{{ topping.name }}, ilość: {{ topping.amount }}, kwota: {{ topping.price }}</li>
+                {% endfor %}
+            {% endfor %}
+
+        </ul>
+
+    </table>
+
+
+    <li>
+        <h3>SUMA</h3>
+        {{ order.price }}
+    </li>
+
+    <a href="burger">
+    <button type="button">MENU</button>
+
+    <a href="burger?r=1">
+    <button type="button">ZAKOŃCZ I PRZEJDŹ DO MENU</button>
+{% endblock %}

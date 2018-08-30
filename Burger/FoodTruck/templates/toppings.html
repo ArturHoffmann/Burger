@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>DODATKI</h1>
+
+    <h2>{{ burger.name }}</h2>
+    <form action="cash" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="order_item_id" value="{{ order_item_id }}">
+
+        <table>
+            {% for topping in topping_data %}
+                <tr>
+                    <td><label for="topping">{{ topping.name }}</label></td>
+                    <td><input id="top_{{ topping.name }}" type="number" name="top_{{ topping.name }}" value="{{ topping.amount }}"></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <input type="submit" name="option" value="KASA"></input>
+        <input type="submit" name="option" value="MENU"></input>
+    </a>
+    </form>
+
+
+
+{% endblock %}
+
+</ul>
+
